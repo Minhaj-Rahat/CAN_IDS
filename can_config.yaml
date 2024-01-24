@@ -1,0 +1,34 @@
+Hu:
+  dataGen:
+    datafiles: ["DatasetHCRL_gids/DoS_dataset.csv","DatasetHCRL_gids/Fuzzy_dataset.csv","DatasetHCRL_gids/gear_dataset.csv","DatasetHCRL_gids/RPM_dataset.csv"]
+    destfiles: ['Dataset/Hu/data_DOS_11_HU','Dataset/Hu/data_fuzzy_29_HU','Dataset/Hu/data_gear_29_HU','Dataset/Hu/data_rpm_29_HU']
+    one_time_test_data_files: ['./SRC/Dataset/CSVs/Standard/HCRL_SA_DoS_Standard.csv','./SRC/Dataset/CSVs/Standard/HCRL_SA_Fuzzy_Standard.csv']
+    one_time_test_dest_files: ['./SRC/Dataset/Hu/data_HCRL_SA_DOS_11_HU','./SRC/Dataset/Hu/data_HCRL_SA_fuzzy_29_HU']
+    TEST_DATA_PERCENTAGE: 0.25
+    TRAINING_DATA_PERCENTAGE: 0.75
+  train:
+    modelFiles: ['models/Hu/Dos_Hu','models/Hu/fuzzy_Hu','models/Hu/gear_Hu','models/Hu/rpm_Hu' ]
+    lr: 0.0001
+    filter_num_cnn: 20
+    kernel_size_cnn: 3
+    stride_cnn: 1
+    filter_num_pooling: 2
+    stride_pooling: 2
+    drop_out: 0.25
+    loss: binary_crossentropy
+    optimizer: Adam
+    NUM_OF_CLASSES: 2
+  test:
+    modelTestFiles: ['Dataset/Hu/Dos_test_file','Dataset/Hu/fuzzy_test_file','Dataset/Hu/gear_test_file','Dataset/Hu/rpm_test_file']
+Tariq:
+  dataGen:
+    datafiles: ['HCRL_OTIDS_Dataset/attack_free.csv', 'HCRL_OTIDS_Dataset/DoS_attack.csv','HCRL_OTIDS_Dataset/Fuzzy_attack.csv', 'HCRL_OTIDS_Dataset/Impersonation_attack.csv']
+    destfiles: 'Dataset/tariq/train_test_balanced'
+  train:
+    modelFiles: 'models/tariq2'
+  test:
+    modelTestFiles: 'Dataset/tariq/test2'
+Sami:
+  dataGen:
+    datafiles:
+    destfiles:
